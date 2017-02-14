@@ -1,0 +1,3 @@
+---
+puppet::profile::agent::puppet_server: 'puppetmaster-01.vgt.lan'
+puppet::profile::agent::ca_server: 'puppetmaster-01.vgt.lan'

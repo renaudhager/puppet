@@ -1,0 +1,4 @@
+---
+  include:
+    classes:
+      - puppetdb::database::postgresql

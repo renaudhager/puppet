@@ -1,0 +1,13 @@
+---
+puppetdb::server::database_host: 'puppetdb-pgsql-01.ue2.aws'
+puppetdb::server::database_username: 'puppetdb'
+puppetdb::server::database_name: 'puppetdb'
+puppetdb::server::database_password: 'dbpuppet'
+puppetdb::server::database_port: '5432'
+puppetdb::server::store_usage: '5120'
+puppetdb::server::temp_usage: '5120'
+puppetdb::server::manage_firewall: false
+puppetdb::server::listen_address: '172.17.0.1'
+puppetdb::server::java_args:
+  '-Xmx': 512M
+  '-Xms': 512M

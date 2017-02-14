@@ -1,0 +1,9 @@
+---
+include:
+  classes:
+    - mesos
+    - mesos::master
+    - zookeeper
+    - profiles::marathon::install
+    - vault
+    - profiles::vault::server::tls

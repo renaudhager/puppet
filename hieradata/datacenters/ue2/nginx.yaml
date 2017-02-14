@@ -1,0 +1,17 @@
+---
+nginx::nginx_upstreams:
+  'puppetdb_backend':
+    ensure: present
+    members:
+      - puppetdb-01.ue2.aws
+      - puppetdb-02.ue2.aws
+      - puppetdb-03.ue2.aws
+nginx::nginx_servers:
+  'puppetboard':
+    ensure: present
+    use_default_location: false
+nginx::nginx_locations:
+  '/':
+    ensure: present
+    proxy: 'http://puppetdb_backend/'
+    server: 'puppetboard'

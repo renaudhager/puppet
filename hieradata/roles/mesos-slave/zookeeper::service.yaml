@@ -1,0 +1,2 @@
+---
+zookeeper::service::service_ensure: 'stopped'

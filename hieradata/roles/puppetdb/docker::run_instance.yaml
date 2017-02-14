@@ -1,0 +1,12 @@
+---
+docker::run_instance::instance:
+  puppetboard:
+    image: 'renaudhager/puppetboard:1.0.1'
+    env:
+      - PUPPETDB_PORT=8080
+      - PUPPETDB_HOST=172.17.0.1
+      - LISTEN_PORT=80
+    ports:
+      - '80:80'
+    pull_on_start: true
+    restart_service: true

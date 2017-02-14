@@ -1,0 +1,2 @@
+---
+puppetdb::globals::version: '4.2.4-1.el7'

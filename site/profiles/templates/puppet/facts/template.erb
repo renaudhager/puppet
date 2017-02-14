@@ -1,0 +1,27 @@
+---
+## File managed by Puppet ##
+<%- facts = scope.lookupvar('profiles::puppet::facts::static') -%>
+<%- facts.keys.sort_by{ |sk| (sk.to_s.downcase.include? "match") ? 'zzz' + sk.to_s : sk.to_s }.each do |k| -%>
+<%- v = facts[k] -%>
+<%- if v.is_a?(Hash) -%>
+<%= k %>
+<%- v.keys.sort.each do |key| -%>
+    <%- value = v[key] -%>
+    <%- if value.is_a?(Array) -%>
+    <%- value.each do |a| -%>
+    <%= key %>: <%= a %>
+    <%- end -%>
+    <%- else -%>
+    <%= key %>: <%= value %>
+    <%- end -%>
+<%- end -%>
+<%- else -%>
+<%- if v.is_a?(Array) -%>
+<%- v.each do |a| -%>
+<%= k %>: <%= a %>
+<%- end -%>
+<%- elsif v != :undef -%>
+<%= k %>: <%= v %>
+<%- end -%>
+<%- end -%>
+<%- end -%>

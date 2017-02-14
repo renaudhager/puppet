@@ -1,0 +1,2 @@
+---
+profiles::puppet::node::puppet_pkg_version: '1.7.0-1trusty'

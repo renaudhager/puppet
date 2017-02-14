@@ -1,0 +1,4 @@
+---
+profiles::vault::utils::tokens:
+  'decrypt_cert':
+    line: 'decrypt_cert:3c0e558e-303b-202f-ffef-972d4a6d8cf3'

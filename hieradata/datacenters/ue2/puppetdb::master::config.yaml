@@ -1,0 +1,2 @@
+---
+puppetdb::master::config::puppetdb_server: 'puppetdb-01.ue2.aws'

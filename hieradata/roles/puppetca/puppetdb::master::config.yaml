@@ -1,0 +1,5 @@
+---
+puppetdb::master::config::enable_reports: true
+puppetdb::master::config::manage_report_processor: true
+puppetdb::master::config::puppetdb_server: ''
+puppetdb::master::config::puppetdb_soft_write_failure: true

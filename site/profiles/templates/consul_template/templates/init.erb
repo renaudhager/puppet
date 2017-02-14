@@ -1,0 +1,19 @@
+# Consul-template Agent (Upstart unit)
+description "Consul-template Agent"
+start on runlevel [2345]
+stop on runlevel [06]
+
+env CONSUL_TEMPLATE=/usr/local/bin/consul-template
+
+setuid <%= @user %>
+setgid <%= @group %>
+
+exec $CONSUL_TEMPLATE \
+  -consul <%= @consul_url %> \
+  -template "<%= @template_dir %>/<%= @name %>.ctmpl:<%= @template_dst %>/<%= @name %>.conf:<%= @instance['action'] %>" \
+  -syslog \
+  -retry 15s
+
+respawn
+respawn limit 10 10
+kill timeout 10

@@ -1,0 +1,10 @@
+---
+profiles::system::sudo::rules:
+  'renaud_root_all':
+    content: 'renaud ALL=(ALL) NOPASSWD: ALL'
+  'vagrant_root_all':
+    content: 'vagrant ALL=(ALL) NOPASSWD: ALL'
+  'ubuntu_root_all':
+    content: 'ubuntu ALL=(ALL) NOPASSWD: ALL'
+  'centos_root_all':
+    content: 'centos ALL=(ALL) NOPASSWD: ALL'

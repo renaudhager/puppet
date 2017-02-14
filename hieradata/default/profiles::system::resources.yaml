@@ -1,0 +1,23 @@
+---
+# profiles::system::resources::files:
+#   # Setup consul user/group/dir
+#   '/home/consul':
+#     ensure: 'directory'
+#     owner: 'consul'
+#     group: 'consul'
+#     mode: '0755'
+#     require: 'User[consul]'
+profiles::system::resources::users:
+  'renaud':
+    comment: 'Renaud'
+    uid: '1981'
+    home: '/home/renaud'
+profiles::system::resources::sshkeys:
+  'renaud@renaud':
+    user: renaud
+    type: 'ssh-rsa'
+    key: 'AAAAB3NzaC1yc2EAAAADAQABAAABAQDV5eSyd3JE2AD/9s/ix/yLfb561XRZRLOviWTlNGtIiD+2lwpH/dOjzZ+Z3gwyc1JwcQ/JOwHNJDBdGbxloKzrzx4BZEAZV18o4lDMMbZBfivUmXGCnIi52FMH3wqwWGVZiuW6xi6cOMx52x7itHXNu8cjd6aCgmSIHS73QCS56owVRKKowc/YiRFt7h7NZ4k/3CnzJgWJ2BmRU3wE5Q3Yt/f56TkA59Ny6I1JNuUHlbohIOkg38ltyPE4klUmrZc7lthnkyYewr8HModQYjl0f+Y/H/KaALD3w9sxlia1PPRAIjDvtqucRoNslKrFjfeUElP0XNKI4NJoaN72tar1'
+  'renaud@mac':
+    user: renaud
+    type: 'ssh-rsa'
+    key: 'AAAAB3NzaC1yc2EAAAADAQABAAABAQCqWW8PhzNa3ZsukIIhiSur/48LjQlPjrFvjSj5N5+Izar+NVIKU0l9/HlBrOOobBp+wiMkkaJn/FtAGfG8JcX+mm1G4KQunHaGmqqM6zohcBHkEEemRDI+e8vFlZwgE/ta6rY9tfTrNM5Z0/DFgypek3fCGIrwJXwQSqCD++8Rcy3htdw46J3esnfQOnYIxCSZ6lDezS4+mn/aiSHdIJmZDrE5BLLwRCDtSN2aLna5MMmZk9CSEzEVYQgoaIWEWLalQ5n14zUUmeUhSTFS6lV+fZpLTUkUeu/e5Eo5+Sg/XSeL94ZjbB9vHzROsMGqawNgGYJ2UW34FXT5QcUpPH6b'

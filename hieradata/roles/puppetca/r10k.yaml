@@ -1,0 +1,8 @@
+---
+r10k::version: '1.5.1'
+r10k::sources:
+  puppet:
+    remote: 'https://github.com/renaudhager/puppet.git'
+    basedir: "%{::settings::codedir}/environments"
+    prefix: false
+r10k::manage_modulepath: false

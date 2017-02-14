@@ -1,0 +1,88 @@
+#!/bin/bash
+# 3 args :
+# -t/--token=vault token
+# -k/--key=vault key
+# -f/--file=file to decrypt
+# -o/--output=output file
+# -s/--vault-server=URL to vault server
+
+if [[ $# -eq 0 ]]
+then
+  echo "syntax : decrypt.bash -t|--token TOKEN -k|--key KEY
+    -f|--file SOURCE_FILE -o|--output OUTPUT_FILE
+    -s|--vault-server-url http...."
+  exit 1
+fi
+
+while [[ $# -gt 1 ]]
+do
+  key="$1"
+
+  case $key in
+      -t|--token)
+      TOKEN="$2"
+      shift # past argument
+      ;;
+      -tf|--token-file)
+      TOKEN_FILE="$2"
+      shift
+      ;;
+      -ti|--token-id)
+      TOKEN_ID="$2"
+      shift
+      ;;
+      -k|--key)
+      KEY="$2"
+      shift # past argument
+      ;;
+      -f|--file)
+      FILE="$2"
+      shift
+      ;;
+      -o|--output)
+      OUTPUT="$2"
+      shift # past argument
+      ;;
+      -s|--vault-server-url)
+      URL="$2"
+      shift # past argument
+      ;;
+      *)
+      echo "syntax : decrypt.bash
+        [-t|--token TOKEN | -tf|--token-file /etc/vault/tokens -ti ID]
+        -k|--key KEY
+        -f|--file SOURCE_FILE -o|--output OUTPUT_FILE
+        -s|--vault-server-url http...."
+      exit 1
+      ;;
+  esac
+  shift # past argument or value
+done
+
+
+# Setting default value
+if [ -z $URL ];then
+  URL="<%= @vault_url %>"
+fi
+
+if [ -z $TOKEN_FILE ];then
+  TOKEN_FILE="/etc/vault/tokens"
+fi
+
+if [ -n $TOKEN_ID ];then
+  # Retrieving token with token ID :
+  TOKEN=$(cat $TOKEN_FILE | grep $TOKEN_ID | cut -d ":" -f 2)
+fi
+
+# Put encrypt file into a json file.
+tmp_file=$(mktemp)
+echo "{\"ciphertext\":\"$(cat $FILE)\"}" >$tmp_file
+
+# decrypt file
+echo "Decrypt file $FILE"
+curl -s -X POST -H "X-Vault-Token: $TOKEN" \
+  -d@${tmp_file} ${URL}/v1/transit/decrypt/${KEY} \
+  |  jq -r .data.plaintext | base64 -d >$OUTPUT
+
+# Delete tmp file
+rm -f $tmp_file

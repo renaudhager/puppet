@@ -1,0 +1,6 @@
+---
+profiles::puppet::server::config_bootstrap:
+  'puppetlabs.services.ca.certificate-authority-disabled-service/certificate-authority-disabled-service':
+    ensure: present
+  'puppetlabs.services.ca.certificate-authority-service/certificate-authority-service':
+    ensure: absent

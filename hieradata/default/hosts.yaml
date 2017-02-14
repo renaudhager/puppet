@@ -1,0 +1,2 @@
+---
+hosts::purge_hosts: false

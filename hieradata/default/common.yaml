@@ -1,0 +1,12 @@
+---
+include:
+  classes:
+    - puppet::profile::agent
+    - profiles::system::packages
+    - profiles::system::resources
+    - profiles::system::sudo
+    - profiles::puppet::agent
+    - profiles::puppet::facts
+    - resolv_conf
+    - hosts
+    - ntp

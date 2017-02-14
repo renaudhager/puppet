@@ -1,0 +1,3 @@
+---
+puppet::profile::agent::puppet_server: 'puppetca-01.ue2.aws'
+puppet::profile::agent::ca_server: 'puppetca-01.ue2.aws'

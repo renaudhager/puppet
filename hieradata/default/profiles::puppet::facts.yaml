@@ -1,0 +1,5 @@
+---
+profiles::puppet::facts::static:
+  s_role: "%{::role}"
+  s_datacenter: "%{::datacenter}"
+  s_puppet_env: "%{::environment}"

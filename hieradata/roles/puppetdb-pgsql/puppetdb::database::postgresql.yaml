@@ -1,0 +1,4 @@
+---
+puppetdb::database::postgresql::listen_addresses: '%{::fqdn}'
+puppetdb::database::postgresql::database_username: 'puppetdb'
+puppetdb::database::postgresql::database_password: 'dbpuppet'

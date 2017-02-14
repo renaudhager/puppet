@@ -1,0 +1,15 @@
+---
+vault::backend:
+  consul:
+    address: '127.0.0.1:8500'
+    path: 'vault'
+
+vault::listener:
+  tcp:
+    address: '0.0.0.0:8200'
+    cluster_address: '%{ipaddress_eth1}:8201'
+    tls_disable: 1
+    tls_cert_file: '/etc/vault/ssl/cert.pem'
+    tls_key_file : '/etc/vault/ssl/key.pem'
+
+vault::default_lease_ttl: 720h

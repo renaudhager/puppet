@@ -1,0 +1,10 @@
+---
+hosts::host_entries:
+  'puppetmaster-01.vgt.lan':
+    ip: '172.16.10.11'
+    host_aliases:
+      - 'puppetmaster-01'
+  'puppetmaster-02.vgt.lan':
+    ip: '172.16.10.12'
+    host_aliases:
+      - 'puppetmaster-02'

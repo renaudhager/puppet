@@ -1,0 +1,3 @@
+---
+nginx::manage_repo: true
+nginx::package_source: 'nginx-stable'

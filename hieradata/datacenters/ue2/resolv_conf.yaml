@@ -1,0 +1,6 @@
+---
+resolv_conf::nameservers:
+  - 172.16.8.2
+resolv_conf::searchpath:
+  - ue2.aws
+  - us-east-2.compute.internal

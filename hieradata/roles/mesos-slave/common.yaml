@@ -1,0 +1,8 @@
+---
+include:
+  classes:
+    - mesos
+    - mesos::slave
+    - docker
+    - zookeeper
+    - zookeeper::service

@@ -1,0 +1,10 @@
+---
+mesos::slave::enable: true
+mesos::slave::resources:
+  ports: '[2000-65535]'
+  mem: '1536'
+mesos::slave::options:
+  containerizers: 'docker,mesos'
+  hostname: '%{::fqdn}'
+  isolation: 'cgroups/cpu,cgroups/mem'
+  executor_registration_timeout: '10mins'

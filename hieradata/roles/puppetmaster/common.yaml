@@ -1,0 +1,7 @@
+---
+include:
+  classes:
+    - puppet::profile::master
+    - profiles::puppet::server
+    - puppetdb::master::config
+    - r10k

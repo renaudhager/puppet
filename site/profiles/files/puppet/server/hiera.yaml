@@ -1,0 +1,24 @@
+---
+:backends:
+  - yaml
+:yaml:
+  :datadir: /etc/puppetlabs/code/environments/%{environment}/hieradata
+:hierarchy:
+  - "nodes/%{::clientcert}/%{calling_class}"
+  - "nodes/%{::clientcert}/common"
+  - "os/distrib/%{::lsbdistcodename}/%{calling_class}"
+  - "os/distrib/%{::lsbdistcodename}/common"
+  - "os/name/%{::operatingsystem}/%{calling_class}"
+  - "os/name/%{::operatingsystem}/common"
+  - "os/family/%{::osfamily}/%{calling_class}"
+  - "os/family/%{::osfamily}/common"
+  - "roles/%{role}/%{calling_class}"
+  - "roles/%{role}/common"
+  - "datacenters/%{datacenter}/%{calling_class}"
+  - "datacenters/%{datacenter}/common"
+  - "default/%{calling_class}"
+  - "default/common"
+:merge_behavior: deeper
+:deep_merge_options:
+  :knockout_prefix: '--'
+  :preserve_knockout: true
