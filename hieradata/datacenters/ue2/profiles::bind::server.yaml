@@ -2,9 +2,13 @@
 profiles::bind::server::confs:
   '/etc/named.conf':
     listen_on_addr:
-      - '{%ipaddress_eth0}'
+      - '%{::ipaddress_eth0}'
       - '127.0.0.1'
     forwarders:
       - 172.16.8.2
     allow_query:
       - 172.16.8.0/24
+      - '127.0.0.1'
+    allow_recursion:
+      - 172.16.8.0/24
+      - '127.0.0.1'
