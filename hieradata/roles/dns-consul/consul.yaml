@@ -1,0 +1,13 @@
+---
+consul::config_hash:
+    server: true
+    bootstrap_expect: 3
+    datacenter: '%{::datacenter}'
+    data_dir: '/var/consul'
+    encrypt: 'X4SYObnf2pTAcAHRhpj7dA=='
+    log_level: 'INFO'
+    enable_syslog: true
+    bind_addr: '%{::ipaddress_eth0}'
+    addresses:
+      rpc: "127.0.0.1"
+      http: "0.0.0.0"
