@@ -1,3 +1,4 @@
 ---
 profiles::system::packages::packages:
   unzip: {}
+  epel-release: {}
