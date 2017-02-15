@@ -1,0 +1,18 @@
+
+---
+consul::version: '0.6.4'
+consul::config_hash:
+    server: false
+    datacenter: '%{::datacenter}'
+    data_dir: '/var/consul'
+    encrypt: 'X4SYObnf2pTAcAHRhpj7dA=='
+    log_level: 'INFO'
+    enable_syslog: true
+    bind_addr: '%{::ipaddress_eth0}'
+    addresses:
+      rpc: "127.0.0.1"
+      http: "0.0.0.0"
+    start_join:
+      - dns-01.ue2.aws
+      - dns-02.ue2.aws
+      - dns-03.ue2.aws
