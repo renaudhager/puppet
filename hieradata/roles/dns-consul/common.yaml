@@ -1,0 +1,6 @@
+---
+include:
+  classes:
+    - bind
+    - consul
+    - profiles::bind::server
