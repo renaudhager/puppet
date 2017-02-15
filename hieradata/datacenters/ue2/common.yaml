@@ -2,3 +2,4 @@
 include:
   classes:
     - consul
+    - --resolv_conf
