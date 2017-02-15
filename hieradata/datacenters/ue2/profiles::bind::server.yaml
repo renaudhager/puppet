@@ -5,10 +5,15 @@ profiles::bind::server::confs:
       - '%{::ipaddress_eth0}'
       - '127.0.0.1'
     forwarders:
-      - 172.16.8.2
+      - '172.16.8.2'
     allow_query:
-      - 172.16.8.0/24
+      - '172.16.8.0/24'
       - '127.0.0.1'
     allow_recursion:
       - 172.16.8.0/24
       - '127.0.0.1'
+    zones:
+      'consul':
+        - 'type forward'
+        - 'forward only'
+        - 'forwarders { 127.0.0.1 port 8600; }'
