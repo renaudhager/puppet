@@ -5,6 +5,6 @@ puppet::profile::agent::environment: "%{::environment}"
 puppet::profile::agent::manage_etc_facter_facts_d: false
 puppet::profile::agent::manage_etc_facter: false
 puppet::profile::agent::manage_repos: true
-puppet::profile::agent::runinterval: '5m'
+puppet::profile::agent::runinterval: '30m'
 puppet::profile::agent::reports: false
 puppet::profile::agent::certname: "%{::fqdn}"
