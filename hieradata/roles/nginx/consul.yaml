@@ -11,7 +11,7 @@ consul::services:
   puppetdb-lb:
     address: "%{::ipaddress_eth0}"
     checks:
-      - script: "curl -I --tlsv1 --cacert /etc/puppetlabs/puppet/ssl/certs/ca.pem --cert /etc/puppetlabs/puppet/ssl/certs/%{::fqdn}.pem --key /etc/puppetlabs/puppet/ssl/private_keys/%{::fqdn}.pem -X GET https://%{::ipaddress_eth0}:8081 >/dev/null 2>&1"
+      - script: "ps -ef | grep nginx | grep -v grep>/dev/null 2>&1"
         interval: 10s
     port: 8081
     tags:
