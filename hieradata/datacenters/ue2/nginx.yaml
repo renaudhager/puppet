@@ -6,6 +6,13 @@ nginx::nginx_upstreams:
       - puppetdb-01.ue2.aws
       - puppetdb-02.ue2.aws
       - puppetdb-03.ue2.aws
+  'puppetmaster_backend':
+    ensure: present
+    upstream_context: 'stream'
+    members:
+      - puppetmaster-01.ue2.aws:8140
+      - puppetmaster-02.ue2.aws:8140
+      - puppetmaster-03.ue2.aws:8140
 nginx::nginx_servers:
   'puppetboard':
     ensure: present
@@ -15,3 +22,10 @@ nginx::nginx_locations:
     ensure: present
     proxy: 'http://puppetdb_backend/'
     server: 'puppetboard'
+nginx::nginx_streamhosts:
+  'puppetmaster':
+    ensure: present
+    listen_ip: '%{::ipaddress_eth0}'
+    listen_port: '8140'
+    ipv6_enable: false
+    proxy: 'puppetmaster_backend'
