@@ -10,3 +10,4 @@ include:
     - resolv_conf
     - hosts
     - ntp
+    - selinux
