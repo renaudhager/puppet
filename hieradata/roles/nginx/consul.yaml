@@ -1,0 +1,10 @@
+---
+consul::services:
+  puppet:
+    address: "%{::ipaddress_eth0}"
+    checks:
+      - script: "curl -I -k https://%{::ipaddress_eth0}:8140 >/dev/null 2>&1"
+        interval: 10s
+    port: 8140
+    tags:
+      - "puppet"
