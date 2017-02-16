@@ -3,3 +3,4 @@ puppet::profile::master::server_version: '2.4.0-1.el7'
 # puppet::profile::master::autosign_method: 'file'
 # puppet::profile::master::autosign_file: '/etc/puppetlabs/puppet/autosign.bash'
 puppet::profile::master::manage_hiera_config: false
+puppet::profile::master::manage_hiera_eyaml_package: false
