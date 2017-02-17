@@ -7,5 +7,5 @@
 				)
 
 
-{{ range ls "ue2/fqdn/ue2.lan/" }}
+{{ range ls "<%= @datacenter %>/fqdn/<%= @datacenter %>.lan/" }}
 {{ .Key }}        A     {{ .Value }}{{ end }}
