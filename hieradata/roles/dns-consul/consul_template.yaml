@@ -1,0 +1,7 @@
+---
+consul_template::version: '0.18.1'
+consul_template::watches:
+  'dc-bind-zones':
+    template: 'profiles/consul_template/templates/bind-zones.ctmpl.erb'
+    destination: '/tmp/bind.zones'
+    command: 'true'
