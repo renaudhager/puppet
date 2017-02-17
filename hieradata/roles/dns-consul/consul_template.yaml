@@ -3,5 +3,5 @@ consul_template::version: '0.16.0'
 consul_template::watches:
   'dc-bind-zones':
     template: 'profiles/consul_template/templates/bind-zones.ctmpl.erb'
-    destination: '/tmp/bind.zones'
-    command: 'true'
+    destination: '/etc/named/ue2.lan.zones'
+    command: '/bin/systemctl restart named'

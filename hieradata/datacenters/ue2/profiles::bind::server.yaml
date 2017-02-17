@@ -19,4 +19,4 @@ profiles::bind::server::confs:
         - 'forwarders { 127.0.0.1 port 8600; }'
       'ue2.lan':
         - 'type master'
-        - 'file "ue2.lan"'
+        - 'file "/etc/named/ue2.lan.zones"'

@@ -1,11 +1,13 @@
-<%= @datacenter %>.lan	IN SOA	<%= @fqdn %>. bob@dylan.com. (
-				{{ timestamp "20060102150405" }} ; serial
+$TTL    3600
+$ORIGIN <%= @datacenter %>.lan.
+@	IN SOA	<%= @fqdn %>. bob@dylan.com. (
+				{{ timestamp "2006010215" }} ; serial
 				14400      ; refresh (4 hours)
 				3600       ; retry (1 hour)
 				1048576    ; expire (1 week 5 days 3 hours 16 minutes 16 seconds)
 				2560       ; minimum (42 minutes 40 seconds)
 				)
-
+				IN NS <%= @fqdn %>.
 
 {{ range ls "<%= @datacenter %>/fqdn/<%= @datacenter %>.lan/" }}
-{{ .Key }}        A     {{ .Value }}{{ end }}
+{{ .Key }}.        A     {{ .Value }}{{ end }}
