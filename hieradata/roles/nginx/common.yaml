@@ -2,3 +2,5 @@
 include:
   classes:
     - nginx
+    - profiles::consul_template::install
+    - profiles::consul_template::templates
