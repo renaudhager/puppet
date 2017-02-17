@@ -17,3 +17,6 @@ profiles::bind::server::confs:
         - 'type forward'
         - 'forward only'
         - 'forwarders { 127.0.0.1 port 8600; }'
+      'ue2.lan':
+        - 'type master'
+        - 'file "ue2.lan"'
