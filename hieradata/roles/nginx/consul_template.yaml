@@ -1,0 +1,19 @@
+---
+consul_template::version: '0.16.0'
+consul_template::watches:
+  'puppetmaster_backend':
+    template: 'profiles/consul_template/templates/nginx_upstreams.erb'
+    destination: '/etc/nginx/conf.stream.d/puppetmaster_backend-upstream.conf'
+    template_vars:
+      method: 'least_conn'
+      backend_options: 'fail_timeout=10s'
+      consul_service: 'puppetmaster'
+    command: '/bin/systemctl reload nginx'
+  'puppetdb_backend':
+    template: 'profiles/consul_template/templates/nginx_upstreams.erb'
+    destination: '/etc/nginx/conf.stream.d/puppetdb_backend-upstream.conf'
+    template_vars:
+      method: 'least_conn'
+      backend_options: 'fail_timeout=10s'
+      consul_service: 'puppetdb'
+    command: '/bin/systemctl reload nginx'

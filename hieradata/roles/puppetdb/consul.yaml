@@ -5,6 +5,6 @@ consul::services:
     checks:
       - script: "curl -I -k http://172.17.0.1:8080 >/dev/null 2>&1"
         interval: 10s
-    port: 8140
+    port: 8081
     tags:
       - "puppetdb"

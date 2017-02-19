@@ -6,20 +6,6 @@ nginx::nginx_upstreams:
       - puppetdb-01.ue2.aws
       - puppetdb-02.ue2.aws
       - puppetdb-03.ue2.aws
-  'puppetmaster_backend':
-    ensure: present
-    upstream_context: 'stream'
-    members:
-      - puppetmaster-01.ue2.aws:8140
-      - puppetmaster-02.ue2.aws:8140
-      - puppetmaster-03.ue2.aws:8140
-  'puppetdb_backend':
-    ensure: present
-    upstream_context: 'stream'
-    members:
-      - puppetdb-01.ue2.aws:8081
-      - puppetdb-02.ue2.aws:8081
-      - puppetdb-03.ue2.aws:8081
 nginx::nginx_servers:
   'puppetboard':
     ensure: present
