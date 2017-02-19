@@ -1,0 +1,6 @@
+upstream <%= @name %> {
+
+  <%= @template_vars['method'] %>;
+{{range service "<%= @template_vars['consul_service'] %>"}}
+  server {{.Address}}:{{.Port}} <%= @template_vars['backend_options'] %>;{{end}}
+}
