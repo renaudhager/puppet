@@ -1,0 +1,13 @@
+require 'puppetlabs_spec_helper/rake_tasks'
+require 'puppet-lint/tasks/puppet-lint'
+require 'puppet-catalog-test'
+
+Rake::Task[:spec_clean].clear
+Rake::Task[:lint].clear
+PuppetLint::RakeTask.new :lint do |config|
+  config.ignore_paths = ["spec/**/*.pp", "pkg/**/*.pp", "vendor/**/*.pp"]
+  config.disable_checks = ['80chars','spaceship_operator_without_tag']
+  config.fail_on_warnings = true
+end
+
+PuppetSyntax.exclude_paths = ["spec/fixtures/**/*.pp", "vendor/**/*"]
