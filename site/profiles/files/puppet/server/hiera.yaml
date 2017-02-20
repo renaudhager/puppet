@@ -1,8 +1,15 @@
 ---
 :backends:
   - yaml
+  - consul
 :yaml:
   :datadir: /etc/puppetlabs/code/environments/%{environment}/hieradata
+:consul:
+  :host: 127.0.0.1
+  :port: 8500
+  :paths:
+    - /v1/kv/configuration/%{fqdn}
+    - /v1/kv/configuration/common
 :hierarchy:
   - "nodes/%{::clientcert}/%{calling_class}"
   - "nodes/%{::clientcert}/common"

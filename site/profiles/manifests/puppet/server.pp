@@ -52,6 +52,14 @@ class profiles::puppet::server (
     notify => Service['puppetserver'],
   }
 
+  # installing consul_backend ruby parser.
+  file { '/opt/puppetlabs/puppet/lib/ruby/vendor_ruby/hiera/backend/consul_backend.rb':
+    source => 'puppet:///modules/profiles/puppet/server/consul_backend.rb',
+    owner  => 'root',
+    group  => 'root',
+    notify => Service['puppetserver'],
+  }
+
   file { '/usr/local/bin/r10-deploy.bash':
     ensure => 'present',
     source => 'puppet:///modules/profiles/puppet/server/r10k-deploy.bash',
