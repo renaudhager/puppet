@@ -1,5 +1,12 @@
 {
-  "name": "renaudhager-profiles",
+  "name": "profiles",
+  "version": "1.0.0",
   "author": "renaudhager",
+  "license": "Apache-2.0",
   "summary": "Puppet Profiles",
+  "source": "git",
+  "version": "1.0.0",
+  "dependencies": [
+    {"name":"puppetlabs/stdlib","version_requirement":">= 4.5.0 < 5.0.0"}
+  ]
 }

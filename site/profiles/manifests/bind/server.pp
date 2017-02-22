@@ -3,7 +3,7 @@
 # This class manages bind::server::conf resources.
 #
 # Required modules :
-# - puppetlabs/postgresql
+# - thias/bind
 #
 
 class profiles::bind::server (
