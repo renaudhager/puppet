@@ -10,11 +10,16 @@ nginx::nginx_servers:
   'puppetboard':
     ensure: present
     use_default_location: false
-nginx::nginx_locations:
-  '/':
+    locations:
+      '/':
+        ensure: present
+        proxy: 'http://puppetdb_backend/'
+        server: 'puppetboard'
+  'consul':
     ensure: present
-    proxy: 'http://puppetdb_backend/'
-    server: 'puppetboard'
+    proxy: 'http://consul_backend/'
+    auth_basic: 'Restricted Content'
+    auth_basic_user_file: '/etc/nginx/htpasswd'
 nginx::nginx_streamhosts:
   'puppetmaster':
     ensure: present
