@@ -1,0 +1,5 @@
+---
+profiles::httpauth::users:
+  'consul':
+    file: '/etc/nginx/htpasswd'
+    password: 'azerty01'

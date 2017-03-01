@@ -3,3 +3,4 @@ include:
   classes:
     - nginx
     - consul_template
+    - profiles::httpauth

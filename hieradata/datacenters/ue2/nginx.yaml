@@ -17,17 +17,9 @@ nginx::nginx_servers:
         server: 'puppetboard'
   'consul':
     ensure: present
-    #use_default_location: false
     proxy: 'http://consul_backend/'
-    # locations:
-    #   '/':
-    #     ensure: present
-    #     proxy: 'http://consul_backend/'
-# nginx::nginx_locations:
-#   '/':
-#     ensure: present
-#     proxy: 'http://puppetdb_backend/'
-#     server: 'puppetboard'
+    auth_basic: 'Restricted Content'
+    auth_basic_user_file: '/etc/nginx/htpasswd'
 nginx::nginx_streamhosts:
   'puppetmaster':
     ensure: present
