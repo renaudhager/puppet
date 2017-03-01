@@ -11,3 +11,12 @@ consul::config_hash:
     addresses:
       rpc: "127.0.0.1"
       http: "0.0.0.0"
+consul::services:
+  consul-http-api:
+    address: "%{::ipaddress_eth0}"
+    checks:
+      - script: "curl -I http://%{::ipaddress_eth0}:8500 >/dev/null 2>&1"
+        interval: 10s
+    port: 8500
+    tags:
+      - "consul-http-api"
