@@ -17,3 +17,11 @@ consul_template::watches:
       backend_options: 'fail_timeout=10s'
       consul_service: 'puppetdb'
     command: '/bin/systemctl reload nginx'
+  'consul_backend':
+    template: 'profiles/consul_template/templates/nginx_upstreams.erb'
+    destination: '/etc/nginx/conf.d/consul_backend-upstream.conf'
+    template_vars:
+      method: 'least_conn'
+      backend_options: 'fail_timeout=10s'
+      consul_service: 'consul-http-api'
+    command: '/bin/systemctl reload nginx'
