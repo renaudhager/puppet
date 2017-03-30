@@ -1,0 +1,9 @@
+---
+lvm::volume_groups:
+  brick01:
+    physical_volumes:
+      - /dev/xvdb
+    logical_volumes:
+      brick01:
+        mountpath: /data/brick01
+        mountpath_require: true
