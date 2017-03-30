@@ -11,6 +11,7 @@ if empty( hiera( 'role', undef ) )
     /compute-sl\d\d$/:       { $role = 'mesos-slave' }
     /compute-ma\d\d$/:       { $role = 'mesos-master' }
     /dns-\d\d$/:             { $role = 'dns-consul' }
+    /gluster-\d\d$/:         { $role = 'gluster' }
     /puppetdb-pgsql-\d\d$/:  { $role = 'puppetdb-pgsql' }
     /nginx-\d\d$/:           { $role = 'nginx' }
     /puppetca-\d\d$/:        { $role = 'puppetca' }
