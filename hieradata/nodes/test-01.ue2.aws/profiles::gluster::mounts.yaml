@@ -1,0 +1,6 @@
+---
+profiles::gluster::mounts::mounts:
+  '/gluster/data1':
+    ensure: 'present'
+    volume: 'gluster-01.ue2.aws:/data/brick01/gluster/'
+    transport: 'tcp'
