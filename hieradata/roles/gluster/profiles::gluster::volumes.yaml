@@ -3,6 +3,6 @@ profiles::gluster::volumes::volumes:
   'data01':
     replica: 3
     bricks:
-      - 'gluster-01.ue2.aws:/data/brick01/gluster/'
-      - 'gluster-02.ue2.aws:/data/brick01/gluster/'
-      - 'gluster-03.ue2.aws:/data/brick01/gluster/'
+      - 'gluster-01.ue2.aws:/data/brick01/gluster'
+      - 'gluster-02.ue2.aws:/data/brick01/gluster'
+      - 'gluster-03.ue2.aws:/data/brick01/gluster'
