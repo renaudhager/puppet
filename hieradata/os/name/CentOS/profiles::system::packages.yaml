@@ -4,3 +4,4 @@ profiles::system::packages::packages:
   epel-release: {}
   telnet: {}
   tcpdump: {}
+  lsof: {}
