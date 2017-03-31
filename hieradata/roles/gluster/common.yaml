@@ -4,4 +4,5 @@ include:
     - gluster::install
     - gluster::service
     - profiles::gluster::peers
+    - profiles::gluster::volumes
     - lvm
