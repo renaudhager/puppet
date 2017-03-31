@@ -1,6 +1,7 @@
 ---
 include:
   classes:
-    - gluster
+    - gluster::install
+    - gluster::service
     - profiles::gluster::peers
     - lvm
