@@ -3,6 +3,7 @@
 consul::version: '0.7.5'
 consul::config_hash:
     server: false
+    node_name: '%{trusted.hostname}'
     datacenter: '%{::datacenter}'
     data_dir: '/var/consul'
     encrypt: 'X4SYObnf2pTAcAHRhpj7dA=='

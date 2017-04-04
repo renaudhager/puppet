@@ -2,6 +2,7 @@
 consul::extra_options: '-ui'
 consul::config_hash:
     server: true
+    node_name: '%{trusted.hostname}'
     bootstrap_expect: 3
     datacenter: '%{::datacenter}'
     data_dir: '/var/consul'

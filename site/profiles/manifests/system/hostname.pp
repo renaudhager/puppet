@@ -24,7 +24,6 @@ class profiles::system::hostname (
             # TODO : manage rsyslog with puppet and fix this dirty hack.
             command => "/bin/hostnamectl set-hostname ${new_hostname} && /bin/systemctl restart rsyslog",
             unless  => "hostname | grep -wE \"${new_hostname}\"",
-            notify  => Service['consul'],
           }
         }
         default: { fail( "profiles::system::hostname not supported on this OS major release." ) }
