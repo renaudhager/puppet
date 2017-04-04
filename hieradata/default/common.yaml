@@ -2,6 +2,7 @@
 include:
   classes:
     - puppet::profile::agent
+    - profiles::system::hostname
     - profiles::system::packages
     - profiles::system::resources
     - profiles::system::sudo
