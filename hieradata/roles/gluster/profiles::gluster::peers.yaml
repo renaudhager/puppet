@@ -6,3 +6,9 @@ profiles::gluster::peers::peers:
     pool: 'prod'
   'gluster-03.ue2.aws':
     pool: 'prod'
+  'gluster-11.ue2.aws':
+    pool: 'prod'
+  'gluster-12.ue2.aws':
+    pool: 'prod'
+  'gluster-13.ue2.aws':
+    pool: 'prod'
