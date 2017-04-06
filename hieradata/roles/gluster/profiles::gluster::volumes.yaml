@@ -10,4 +10,4 @@ profiles::gluster::volumes::volumes:
       - 'gluster-12.ue2.aws:/data/brick01/gluster'
       - 'gluster-13.ue2.aws:/data/brick01/gluster'
     options:
-      - network.ping-timeout: 3
+      - 'network.ping-timeout: 3'
