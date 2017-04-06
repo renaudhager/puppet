@@ -1,6 +1,6 @@
 ---
 consul::services:
-  puppetdb:
+  gluster:
     address: "%{::ipaddress_eth0}"
     checks:
       - script: "ps -ef | grep /usr/sbin/glusterfsd >/dev/null 2>&1"
