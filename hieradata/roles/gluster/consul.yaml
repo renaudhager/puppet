@@ -1,0 +1,10 @@
+---
+consul::services:
+  puppetdb:
+    address: "%{::ipaddress_eth0}"
+    checks:
+      - script: "ps -ef | grep /usr/sbin/glusterfsd >/dev/null 2>&1"
+        interval: 2s
+    port: 24007
+    tags:
+      - "gluster"
