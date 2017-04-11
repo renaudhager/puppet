@@ -3,7 +3,7 @@ consul::services:
   gluster:
     address: "%{::ipaddress_eth0}"
     checks:
-      - script: "ps -ef | grep /usr/sbin/glusterfsd >/dev/null 2>&1"
+      - script: "ps -ef | grep /usr/sbin/glusterd | grep -v grep >/dev/null 2>&1"
         interval: 2s
     port: 24007
     tags:
