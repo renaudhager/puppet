@@ -9,5 +9,5 @@ $ORIGIN <%= @datacenter %>.lan.
 				)
 				IN NS <%= @fqdn %>.
 
-{{ range ls "<%= @datacenter %>/fqdn/<%= @datacenter %>.lan/" }}
-{{ .Key }}.        A     {{ .Value }}{{ end }}
+{{ range ls "app/bind/<%= @datacenter %>.lan/" }}
+{{ .Key }} {{ .Value }}{{ end }}
