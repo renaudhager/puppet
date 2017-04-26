@@ -12,6 +12,8 @@ profiles::bind::server::confs:
     allow_recursion:
       - 172.16.8.0/24
       - '127.0.0.1'
+    includes:
+      - '/etc/rndc.key'
     zones:
       'consul':
         - 'type forward'
