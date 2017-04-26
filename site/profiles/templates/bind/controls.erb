@@ -6,7 +6,7 @@
 controls  {
 <% if !@controls.empty? -%>
 <% @controls.each do |key, val| -%>
-	inet <%= val['listen'] %> port <%= val['port'] %> allow { <%= val['allow'] %> } keys { "<%= val['key'] %>;"; };
+	inet <%= val['listen'] %> port <%= val['port'] %> allow { <%= val['allow'] %> } keys { "<%= val['key'] %>"; };
 <% end -%>
 <% end -%>
 };

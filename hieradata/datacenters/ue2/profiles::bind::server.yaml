@@ -14,6 +14,7 @@ profiles::bind::server::confs:
       - '127.0.0.1'
     includes:
       - '/etc/rndc.key'
+      - '/etc/named/controls'
     zones:
       'consul':
         - 'type forward'
@@ -23,13 +24,8 @@ profiles::bind::server::confs:
         - 'type master'
         - 'file "/etc/named/ue2.lan.zones"'
 profiles::bind::server::controls:
-  'localhost':
-    listen: '127.0.0.1'
-    port: '953'
-    allow: '127.0.0.1;'
-    key: 'rndc-key'
-  '%{::ipaddress_eth0}':
-    listen: '%{::ipaddress_eth0}'
+  'all_interfaces':
+    listen: '*'
     port: '953'
     allow: '172.16.8.0/24;'
     key: 'rndc-key'
