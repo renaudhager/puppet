@@ -12,6 +12,8 @@ profiles::bind::server::confs:
     allow_recursion:
       - 172.16.8.0/24
       - '127.0.0.1'
+    includes:
+      - '/etc/rndc.key'
     zones:
       'consul':
         - 'type forward'
@@ -20,3 +22,14 @@ profiles::bind::server::confs:
       'ue2.lan':
         - 'type master'
         - 'file "/etc/named/ue2.lan.zones"'
+profiles::bind::server::controls:
+  'localhost':
+    listen: '127.0.0.1'
+    port: '953'
+    allow: '127.0.0.1;'
+    key: 'rndc-key'
+  '%{::ipaddress_eth0}':
+    listen: '%{::ipaddress_eth0}'
+    port: '953'
+    allow: '172.16.8.0/24;'
+    key: 'rndc-key'
