@@ -4,4 +4,3 @@ include:
     - bind
     - consul
     - profiles::bind::server
-    #- consul_template
