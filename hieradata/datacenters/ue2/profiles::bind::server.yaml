@@ -23,9 +23,10 @@ profiles::bind::server::confs:
       'ue2.lan':
         - 'type master'
         - 'file "/etc/named/ue2.lan.zones"'
-profiles::bind::server::controls:
-  'all_interfaces':
-    listen: '*'
-    port: '953'
-    allow: '172.16.8.0/24;'
-    key: 'rndc-key'
+        - 'allow-update { key "rndc-key"; }'
+# profiles::bind::server::controls:
+#   'all_interfaces':
+#     listen: '*'
+#     port: '953'
+#     allow: '172.16.8.0/24;'
+#     key: 'rndc-key'
