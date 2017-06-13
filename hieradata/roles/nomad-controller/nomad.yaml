@@ -1,0 +1,11 @@
+---
+nomad::version: '0.5.6'
+nomad::config_hash:
+  region: 'us-east'
+  datacenter: '%{::datacenter}'
+  log_level: 'DEBUG'
+  bind_addr: '%{::ipaddress_eth0}'
+  data_dir: '/var/nomad'
+  server:
+    enabled: true
+    bootstrap_expect: 3
