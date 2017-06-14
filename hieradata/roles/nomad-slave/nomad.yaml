@@ -1,0 +1,13 @@
+nomad::version: '0.5.6'
+nomad::config_hash:
+  region: 'us-east'
+  datacenter: '%{::datacenter}'
+  log_level: 'DEBUG'
+  bind_addr: '0.0.0.0'
+  data_dir: '/var/nomad'
+  client:
+    enabled: true
+    server:
+      - nomad-controller-01.ue2.aws
+      - nomad-controller-02.ue2.aws
+      - nomad-controller-03.ue2.aws
