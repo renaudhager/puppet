@@ -2,3 +2,4 @@
 include:
   classes:
     - nomad
+    - docker
