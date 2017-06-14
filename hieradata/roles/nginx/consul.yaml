@@ -16,3 +16,11 @@ consul::services:
     port: 8081
     tags:
       - "puppetdb-lb"
+  training-webapp-lb:
+    address: "%{::ipaddress_eth0}"
+    checks:
+      - script: "ps -ef | grep nginx | grep -v grep>/dev/null 2>&1"
+        interval: 10s
+    port: 80
+    tags:
+      - "training-webapp-lb"
