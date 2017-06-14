@@ -1,6 +1,7 @@
 ---
 nomad::version: '0.5.6'
 nomad::config_hash:
+  name: '%{trusted.hostname}'
   region: 'us-east'
   datacenter: '%{::datacenter}'
   log_level: 'DEBUG'
