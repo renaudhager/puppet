@@ -15,6 +15,7 @@ class profiles::system::resources (
   $files         = hiera_hash( 'profiles::system::resources::files', {} )
   $crons         = hiera_hash( 'profiles::system::resources::crons', {} )
   $sshkeys       = hiera_hash( 'profiles::system::resources::sshkeys', {} )
+  $yumrepos      = hiera_hash( 'profiles::system::resources::yumrepos', {} )
 
   validate_hash( $users )
   validate_hash( $deleted_users )
@@ -48,6 +49,7 @@ class profiles::system::resources (
   create_resources( cron, $crons, $cron_defaults )
   create_resources( ssh_authorized_key, $sshkeys, $defaults )
   create_resources( profiles::deleted_user, $deleted_users )
+  create_resources( yumrepo, $yumrepos )
 
   # Delete the users before we create the new ones
   #Profiles::Deleted_user <||> -> User <| ensure == present |>
