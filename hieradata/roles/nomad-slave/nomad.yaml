@@ -4,7 +4,7 @@ nomad::config_hash:
   region: 'us-east'
   datacenter: '%{::datacenter}'
   log_level: 'DEBUG'
-  bind_addr: '0.0.0.0'
+  bind_addr: '%{::ipaddress_eth0}'
   data_dir: '/var/nomad'
   client:
     enabled: true
