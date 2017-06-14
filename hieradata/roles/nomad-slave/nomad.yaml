@@ -7,7 +7,7 @@ nomad::config_hash:
   data_dir: '/var/nomad'
   client:
     enabled: true
-    server:
+    servers:
       - nomad-controller-01.ue2.aws
       - nomad-controller-02.ue2.aws
       - nomad-controller-03.ue2.aws
