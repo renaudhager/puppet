@@ -7,4 +7,3 @@ profiles::system::packages::packages:
   lsof: {}
   yum-utils: {}
   device-mapper-persistent-data: {}
-  docker-ce: {}
