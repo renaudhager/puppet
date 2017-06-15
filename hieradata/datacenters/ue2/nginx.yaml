@@ -23,6 +23,9 @@ nginx::nginx_servers:
   'training-webapp-lb.service.consul':
     ensure: present
     proxy: 'http://training-webapp/'
+  'training-webapp-lb':
+    ensure: present
+    proxy: 'http://training-webapp/'
 nginx::nginx_streamhosts:
   'puppetmaster':
     ensure: present
