@@ -1,4 +1,5 @@
 ---
+vault::version: '0.8.2'
 vault::backend:
   consul:
     address: '127.0.0.1:8500'
