@@ -5,3 +5,4 @@ include:
     - consul
     - profiles::bind::server
     - consul_template
+    - vault
